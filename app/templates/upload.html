@@ -1,0 +1,21 @@
+
+{% extends "html.html"%}
+{% block container %}
+<h1>Upload books</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <table>
+        {% for field in upload_form %}
+        <tr>
+            <th style="padding:20px;">{{ field.label }}</th>
+            <td style="padding:50px;">{{ field }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+<button type="submit">submit</button>
+
+</form>
+
+{% endblock%}
